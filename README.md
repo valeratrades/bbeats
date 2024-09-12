@@ -12,7 +12,7 @@ When environment is distracting, I override it with binaural beats instead of mu
   <summary>
     <h2>Installation</h2>
   </summary>
-	<pre><code>cargo install bbeats</code></pre>
+	<pre><code class="language-sh">cargo install bbeats</code></pre>
 </details>
 <!-- markdownlint-restore -->
 
