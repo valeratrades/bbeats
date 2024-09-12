@@ -4,6 +4,7 @@ version = "0.1.0"
 edition = "2021"
 description = "binaural beats"
 license = "MIT"
+repository = "https://github.com/valeratrades/bbeats"
 
 [package.metadata.docs.rs]
 cargo-args = ["-Zunstable-options", "-Zrustdoc-scrape-examples"]
