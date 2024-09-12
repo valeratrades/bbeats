@@ -16,5 +16,4 @@ len_zero = "allow" # `.empty()` is O(1) but on &str only
 
 [dependencies]
 clap = { version = "^4.5.17", features = ["derive"] }
-derive-new = "^0.7.0"
 rodio = "^0.19.0"

@@ -119,6 +119,7 @@ jobs:
 
   clippy:
     name: Clippy
+    needs: setup_env
     runs-on: ubuntu-latest
     if: github.event_name != 'pull_request'
     timeout-minutes: 45
