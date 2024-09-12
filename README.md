@@ -10,15 +10,19 @@ When environment is distracting, I override it with binaural beats instead of mu
 <!-- markdownlint-disable -->
 <details>
   <summary>
-    <h2>Installation<h2>
+    <h2>Installation</h2>
   </summary>
-
-TODO
+```sh
+cargo install bbeats 
+```
 </details>
 <!-- markdownlint-restore -->
 
 ## Usage
-TODO
+```sh
+bbeats -l 41.0 -r 39.0
+```
+by default `bbeats` will start with same values as above. These are approximately optimal for deep work.
 
 <br>
 
