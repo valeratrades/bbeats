@@ -24,8 +24,9 @@ jobs:
         sudo apt-get install alsa
       id: setup
 
-    - name: Continue workflow
-      run: echo "::set-output name=continue::true"
+    - id: decision
+      run: echo continue=true >> $GITHUB_OUTPUT
+
 
   tokei:
     name: Reasonable Amount of Comments
