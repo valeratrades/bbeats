@@ -64,7 +64,7 @@ jobs:
   test:
     name: Rust ${{matrix.rust}}
     needs: setup_env
-    if: needs.setup_env.outputs.continue == "true"
+    if: ${{needs.setup_env.outputs.continue == "true"}}
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
@@ -93,7 +93,7 @@ jobs:
   doc:
     name: Documentation
     needs: setup_env
-    if: needs.setup_env.outputs.continue == "true"
+    if: ${{needs.setup_env.outputs.continue == "true"}}
     runs-on: ubuntu-latest
     timeout-minutes: 45
     env:
@@ -107,7 +107,7 @@ jobs:
   miri:
     name: Miri
     needs: setup_env
-    if: needs.setup_env.outputs.continue == "true"
+    if: ${{needs.setup_env.outputs.continue == "true"}}
     runs-on: ubuntu-latest
     timeout-minutes: 45
     steps:
@@ -121,7 +121,7 @@ jobs:
   clippy:
     name: Clippy
     needs: setup_env
-    if: needs.setup_env.outputs.continue == "true"
+    if: {{needs.setup_env.outputs.continue == "true"}}
     runs-on: ubuntu-latest
     timeout-minutes: 45
     steps:
