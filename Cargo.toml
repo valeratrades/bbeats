@@ -2,6 +2,8 @@
 name = "bbeats"
 version = "0.1.0"
 edition = "2021"
+description = "binaural beats"
+license = "MIT"
 
 [package.metadata.docs.rs]
 cargo-args = ["-Zunstable-options", "-Zrustdoc-scrape-examples"]
