@@ -10,6 +10,24 @@ permissions:
   contents: read
 
 jobs:
+  setup_env:
+    name: Setup Environment
+    runs-on: ubuntu-latest
+    outputs:
+      continue: ${{ steps.setup.outputs.continue }}
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Install dependencies
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y jq ripgrep alsa-utils alsa-lib
+      id: setup
+
+    - name: Continue workflow
+      run: echo "::set-output name=continue::true"
+
   tokei:
     name: Reasonable Amount of Comments
     runs-on: ubuntu-latest
@@ -45,7 +63,7 @@ jobs:
 
   test:
     name: Rust ${{matrix.rust}}
-    needs: pre_ci
+    needs: setup_env
     if: needs.pre_ci.outputs.continue
     runs-on: ubuntu-latest
     strategy:
@@ -74,7 +92,7 @@ jobs:
 
   doc:
     name: Documentation
-    needs: pre_ci
+    needs: setup_env
     if: needs.pre_ci.outputs.continue
     runs-on: ubuntu-latest
     timeout-minutes: 45
@@ -88,7 +106,7 @@ jobs:
 
   miri:
     name: Miri
-    needs: pre_ci
+    needs: setup_env
     if: needs.pre_ci.outputs.continue
     runs-on: ubuntu-latest
     timeout-minutes: 45
