@@ -42,9 +42,6 @@ jobs:
           echo "Check passed: Number of comments is less than 10% of code"
         fi
 
-  pre_ci:
-    uses: valeratrades/.github/.github/workflows/pre_ci.yml@master
-
   sort:
     name: Cargo Sorted
     runs-on: ubuntu-latest
