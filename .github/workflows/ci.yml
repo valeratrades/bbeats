@@ -24,13 +24,8 @@ jobs:
         sudo apt-get install alsa
       id: setup
 
-    - name: Add ALSA to LD_LIBRARY_PATH
-      run: |
-        echo "/usr/lib" >> $GITHUB_ENV
-        echo "/usr/lib64" >> $GITHUB_ENV
-
     - id: decision
-      run: echo continue=true >> $GITHUB_OUTPUT
+      run: echo continue=false >> $GITHUB_OUTPUT #don't know how to allow other jobs to see the installed `alsa`
 
 
   tokei:
