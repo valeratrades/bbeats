@@ -8,7 +8,7 @@ use rodio::{source::Source, OutputStream, Sink};
 struct Cli {
 	#[arg(long, short, default_value = "41.0")]
 	left_freq: f32,
-	#[arg(long, short, default_value = "41.0")]
+	#[arg(long, short, default_value = "39.0")]
 	right_freq: f32,
 }
 
