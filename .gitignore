@@ -18,6 +18,11 @@ commit_message
 commit
 functions.sh
 
+## Nix
+**/result
+flake.lock
+.direnv/
+
 ## Vim
 *.sw[po]
 
